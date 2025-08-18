@@ -1,0 +1,51 @@
+
+/* HostCard.module.css */
+
+.hostCard {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  min-width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+  display: inline-block;
+  color: #555;
+}
+
+.hostCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+.hostCardHeader h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.hostCardStatus {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Status-specific background colors for UP/DOWN only */
+.status_up {
+  background-color: #e6ffe6; /* Light green */
+  border-color: #00cc00;
+}
+
+.status_down {
+  background-color: #ffe6e6; /* Light red */
+  border-color: #ff0000;
+}
+
+/* Optional: Style for the content section */
+.hostCardContent p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
