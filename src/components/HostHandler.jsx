@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import HostCard from "./HostCard";
+import { NavLink } from "react-router-dom";
 
 function HostHandler() {
     const [hostsData, setHostsData] = useState(null);
@@ -20,7 +21,6 @@ function HostHandler() {
         }
         fetchHosts();
     }, []);
-    console.log(hostsData)
     return (
         <>
             <div className="host-container">
@@ -40,7 +40,11 @@ function HostHandler() {
                     <p>Loading hosts...</p>
                 )}
             </div>
-           
+            <div id="btn-section">
+                <NavLink  to="/new-host" id="new-host-btn">
+                    Add new host
+                </NavLink>
+            </div>
         </>
     );
 }

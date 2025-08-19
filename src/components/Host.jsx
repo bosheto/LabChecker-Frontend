@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSearchParams } from "react-router-dom";
-import HostForm from "./HostForm";
+import EditHost from "./EditHost";
 
 function Host () {
     const [hostData, setHostsData] = useState(null);
@@ -31,9 +31,7 @@ function Host () {
         <div>
             {hostData ? (
                 <div>
-                    {/* <h1>Host page</h1>
-                    <p>{hostData.ip}</p> */}
-                    <HostForm data = {hostData} />
+                    <EditHost hostData = {hostData} />
                 </div>
             ) : (
                 <p>Loading Host data...</p>

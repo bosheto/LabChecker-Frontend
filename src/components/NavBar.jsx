@@ -21,12 +21,12 @@ function NavBar () {
                 </li>
                 <li>
                     <NavLink
-                        to="/admin"
+                        to="/about"
                         className={({ isActive }) =>
                             isActive ? styles.active : undefined
                         }
                     >
-                        Admin
+                        About
                     </NavLink>
                 </li>
             </ul>

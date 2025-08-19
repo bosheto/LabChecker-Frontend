@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Admin from "./components/Admin";
 import NavBar from "./components/NavBar";
 import Host from "./components/Host";
+import AddHost from "./components/AddHost";
 
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
       <NavBar />
     <Routes>
       <Route path="/" element={ <Home /> } />
-      <Route path="/admin" element= { <Admin /> } />
+      <Route path="/about" element= { <Admin /> } />
       <Route path="/host" element= { <Host />}></Route>
+      <Route path="/new-host" element= { <AddHost />}></Route>
     </Routes>
     </BrowserRouter>
 
