@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import HostCard from "./HostCard";
 
 function HostHandler() {
-    const [userData, setUserData] = useState(null);
+    const [hostsData, setHostsData] = useState(null);
 
     useEffect(() => {
         const fetchHosts = async () => {
@@ -12,7 +12,7 @@ function HostHandler() {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const data = await response.json();
-                setUserData(data);
+                setHostsData(data);
             }
             catch (error) {
                 console.error("Error fetching hosts:", error);
@@ -20,24 +20,28 @@ function HostHandler() {
         }
         fetchHosts();
     }, []);
-
+    console.log(hostsData)
     return (
-        <div>
-            {userData && Array.isArray(userData) ? (
-                userData.map((host) => (
-                    <HostCard
+        <>
+            <div className="host-container">
+                {hostsData && Array.isArray(hostsData) ? (
+                    hostsData.map((host) => (
+                        <HostCard
                         key={host.id}
+                        id={host.id}
                         name={host.name}
                         ip={host.ip}
                         version={host.version}
                         status={host.staus}
                         
-                    />
-                ))
-            ) : (
-                <p>Loading hosts...</p>
-            )}
-        </div>
+                        />
+                    ))
+                ) : (
+                    <p>Loading hosts...</p>
+                )}
+            </div>
+           
+        </>
     );
 }
 

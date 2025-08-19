@@ -4,7 +4,7 @@ function Header() {
      
     return (
         <header>
-           <h1>Lab Checker</h1>
+           <h3>Lab Checker</h3>
         </header>
     );
 }

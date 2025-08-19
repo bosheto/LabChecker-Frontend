@@ -1,17 +1,21 @@
-// import './App.css'
-import Header from "./Header"
-import HostCard from "./HostCard";
-import HostHandler from "./HostHandler";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import Admin from "./components/Admin";
+import NavBar from "./components/NavBar";
+import Host from "./components/Host";
 
 
 function App() {
   return (
-    <div className="App">
-      {/* <HostCard name="FPR 3210" ip="10.238.105.132" version="7.6.1"/> */}
-      <Header />
-      <HostHandler />
-    </div>
-    // <Header />
+    <BrowserRouter>
+      <NavBar />
+    <Routes>
+      <Route path="/" element={ <Home /> } />
+      <Route path="/admin" element= { <Admin /> } />
+      <Route path="/host" element= { <Host />}></Route>
+    </Routes>
+    </BrowserRouter>
+
   );
 }
 
