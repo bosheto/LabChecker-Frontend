@@ -14,6 +14,11 @@
   text-align: center;
 }
 
+
+.hostCard div.top {
+  display: inline-block;
+}
+
 .hostCardHeader {
   display: flex;
   justify-content: space-between;

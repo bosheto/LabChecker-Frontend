@@ -1,5 +1,7 @@
 
 import HostForm from "./HostForm"
+import classes from "./css/EditHost.module.css"
+
 
 function EditHost ({hostData}) {
 
@@ -8,14 +10,15 @@ function EditHost ({hostData}) {
         const newData = {
             id: hostData.id,
             name: data.name,
-            ip: data.ip,
+            ip: data.ip.trim(),
             version: data.version
         }
         
 
         const updateHost = async () => {
             try{
-                const response = await fetch('http://krk-vnap-461-146-5.cisco.com:8080/hosts', {
+                let url = 'http://krk-vnap-461-146-5.cisco.com:8080/api/v1/hosts/' + newData.id
+                const response = await fetch(url , {
                     method: "PUT",
                     body: JSON.stringify(newData), 
                     headers: {
@@ -35,15 +38,28 @@ function EditHost ({hostData}) {
         
     }
 
-    
+    const onDelete = async () => {
+        try{
+            let url = 'http://krk-vnap-461-146-5.cisco.com:8080/api/v1/hosts/' + hostData.id
+            const response = await fetch (url, {method:"DELETE"})
+            if(!response.ok){
+                console.error("Error updating hosts:", error);
+            }
+            window.location.replace("/")    
+        }catch (error) {
+                console.error("Error updating hosts:", error);
+        }
+    }
+
+    const class_name = `${classes.editHost}`
+
+
     return(
-        <>  
-            <div>
-                <h1>Edit Host</h1>
+            <div className={class_name}>
                 <p>Use the bellow form to edit the host details</p>
+                    <HostForm hostData={hostData} onSubmit={onSubmit}/>                
+                <button onClick={onDelete}>delete</button>
             </div>
-            <HostForm hostData={hostData} onSubmit={onSubmit}/>
-        </>
     )
 
 }

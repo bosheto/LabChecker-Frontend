@@ -14,7 +14,7 @@ function AddHost (){
 
         const postHost = async () => {
             try {
-                const response = await fetch('http://krk-vnap-461-146-5.cisco.com:8080/hosts', {
+                const response = await fetch('http://krk-vnap-461-146-5.cisco.com:8080/api/v1/hosts', {
                     method: "POST",
                     body: JSON.stringify(newHostData),
                     headers: {
@@ -36,7 +36,9 @@ function AddHost (){
     }
 
     return (
-        <HostForm onSubmit={onSubmit}/>
+        <div>
+            <HostForm onSubmit={onSubmit}/>
+        </div>
     )
 }
 

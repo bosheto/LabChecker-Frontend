@@ -1,0 +1,60 @@
+
+.host_form {
+    padding: 5px;
+    /* max-width: 35%; */
+    border: 1px solid hsl(0, 0%, 82%);
+    background-color: hsl(180, 0%, 57%);
+    border-radius: 10px;
+    text-align: right;
+    position: relative;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 5px, 2px black;
+}
+
+.host_form_inputs {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid salmon ;
+}
+
+.host_form div{
+    margin-right: 5px;
+    font-size: large;
+    display: block;
+
+}
+
+.host_form div input{
+ background-color: hsl(0, 0%, 41%);
+    font-size:medium;
+    border-radius: 10px;
+    padding: 2px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+
+.host_form_submit_btn {
+    background-color: hsl(225, 100%, 62%);
+    padding: 5px;
+    border-radius: 10px;
+    /* border: 1px solid rgb(57, 82, 174); */
+    margin: 5px;
+}
+
+.host_form_submit_btn:hover {
+    background-color: hsl(235, 86%, 77%);
+    /* padding: 7px; */
+}
+
+
+/* .host_form div label {
+    margin-right: 5px;
+    font-size: large;
+} */
+
+/* .host_form div input {
+   
+} */
+

@@ -12,19 +12,19 @@ function HostCard (props) {
     
     return (
         <div className={cardClassName}>
-            <NavLink to={"/host?id=" + props.id}>
-                <div className={styles.hostCardHeader}>
-                        <h2>{props.name}</h2>
-                </div>
-                <div className={styles.hostCardContent}>
-                    <p className={styles.hostCardIp}>IP: {props.ip}</p>
-                    <p className={styles.hostCardVersion}>Version: {props.version}</p>
-                </div>
-                {/* <div className={styles.hostCardControls}>
-                    <button>Edit</button>
-                </div> */}
-            </NavLink>
-           
+                <NavLink to={"/host?id=" + props.id}>
+                    <div className={styles.hostCardHeader}>
+                            <h2>{props.name}</h2>
+                    </div>
+                    <div className={styles.hostCardContent}>
+                        <p className={styles.hostCardIp}>IP: {props.ip}</p>
+                        <p className={styles.hostCardVersion}>Version: {props.version}</p>
+                    </div>
+                    {/* <div className={styles.hostCardControls}>
+                        <button>Edit</button>
+                    </div> */}
+                </NavLink>
+              
         </div>
     );
 }
